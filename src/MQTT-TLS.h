@@ -69,14 +69,14 @@ sample code bearing this copyright.
 #include "timer_hal.h"
 
 // for debugging.
-#define DEBUG_TLS       0
-#if defined(MBEDTLS_DEBUG_C)
+#define DEBUG_TLS       1
+// #if defined(MBEDTLS_DEBUG_C)
 #define DEBUG_TLS_CORE_LEVEL 2
 #define debug_tls( fmt, ... ) \
     Serial.printf(fmt, ##__VA_ARGS__)
-#else /* !DEBUG_TLS */
-  #define debug_tls( fmt, ... ) ((void)0)
-#endif /* DEBUG_TLS */
+// #else /* !DEBUG_TLS */
+//   #define debug_tls( fmt, ... ) ((void)0)
+// #endif /* DEBUG_TLS */
 
 // MQTT_MAX_PACKET_SIZE : Maximum packet size
 // this size is total of [MQTT Header(Max:5byte) + Topic Name Length + Topic Name + Message ID(QoS1|2) + Payload]
